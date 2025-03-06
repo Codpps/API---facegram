@@ -12,6 +12,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::resource('v1/users', UserController::class);
+Route::get('/alluser', [UserController::class, 'allUser']);
 Route::post('/register/post', [AuthController::class, 'registerpost'])->name('register.post');
 Route::post('/login/post', [AuthController::class, 'loginpost'])->name('login.post');
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
